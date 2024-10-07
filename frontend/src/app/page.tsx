@@ -34,7 +34,7 @@ export default function MealPlannerApp() {
     <div className="mobile-container bg-white h-screen flex flex-col">
       <div className="flex-1 overflow-auto pb-16">
         <header className="p-4">
-          <h1 className="text-2xl font-bold mb-2">FreshPlate</h1>
+          <h1 className="text-black text-2xl font-bold mb-2">PantryPal</h1>
           <p className="text-gray-600">Smart meal planning, less waste</p>
         </header>
 
@@ -117,7 +117,7 @@ function HomeContent({ setActiveTab,
 }) {
   return (
     <div>
-      <h2 className="text-xl font-semibold mb-4">Welcome Back!</h2>
+      <h2 className="text-black text-xl font-semibold mb-4">Welcome!</h2>
       <div className="grid grid-cols-2 gap-4">
         <QuickActionCard
           icon={Calendar}
@@ -166,7 +166,7 @@ function QuickActionCard({ icon: Icon, title, description, onClick }: QuickActio
 function MealPlanContent() {
   return (
     <div>
-      <h2 className="text-xl font-semibold mb-4">This Week&apos;s Meal Plan</h2>
+      <h2 className="text-black text-xl font-semibold mb-4">This Week&apos;s Meal Plan</h2>
       <div className="space-y-4">
         <MealCard
           day="Monday"
@@ -188,7 +188,7 @@ function MealPlanContent() {
 // Inventory Content Component
 function InventoryContent() {
   return (
-    <div>
+    <div className="text-black">
       <h2 className="text-xl font-semibold mb-4">Pantry Inventory</h2>
       <div className="space-y-4">
         <InventoryCategory
@@ -214,7 +214,7 @@ function InventoryContent() {
 // Settings Content Component
 function SettingsContent() {
   return (
-    <div>
+    <div className="text-black">
       <h2 className="text-xl font-semibold mb-4">Settings</h2>
       <div className="space-y-4">
         <SettingsItem title="Notifications" description="Manage your alerts" />
@@ -295,7 +295,7 @@ function InventoryCategory({ category, items }: InventoryCategoryProps) {
 // Recipes Content Component
 function RecipesContent() {
   return (
-    <div>
+    <div className="text-black">
       <h2 className="text-xl font-semibold mb-4">Favorite Recipes</h2>
       <ul className="space-y-2">
         <li>Spaghetti Carbonara</li>
