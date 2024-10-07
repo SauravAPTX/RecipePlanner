@@ -111,7 +111,10 @@ export default function MealPlannerApp() {
 }
 
 // Home Content Component
-function HomeContent({ setActiveTab }) {
+function HomeContent({ setActiveTab,
+}: {
+  setActiveTab: React.Dispatch<React.SetStateAction<string>>;
+}) {
   return (
     <div>
       <h2 className="text-xl font-semibold mb-4">Welcome Back!</h2>
@@ -139,8 +142,15 @@ function HomeContent({ setActiveTab }) {
   );
 }
 
+type QuickActionCardProps = {
+  icon: React.ComponentType<{ className?: string }>;
+  title: string;    
+  description: string;    
+  onClick?: () => void;     
+};
+
 // Quick Action Card Component
-function QuickActionCard({ icon: Icon, title, description, onClick }) {
+function QuickActionCard({ icon: Icon, title, description, onClick }: QuickActionCardProps) {
   return (
     <Card onClick={onClick} className="hover:shadow-lg transition-shadow bg-gradient-to-r from-blue-50 to-blue-100 p-4 rounded-lg">
       <CardContent className="p-4">
@@ -184,21 +194,22 @@ function InventoryContent() {
         <InventoryCategory
           category="Produce"
           items={[
-            { name: "Apples", quantity: "5", expiry: "3 days" },
-            { name: "Spinach", quantity: "1 bag", expiry: "5 days" },
+            { name: "Apples", quantity: 5, expiry: "3 days" }, 
+            { name: "Spinach", quantity: 1, expiry: "5 days" },
           ]}
         />
         <InventoryCategory
           category="Proteins"
           items={[
-            { name: "Chicken breast", quantity: "2", expiry: "2 days" },
-            { name: "Eggs", quantity: "8", expiry: "1 week" },
+            { name: "Chicken breast", quantity: 2, expiry: "2 days" }, 
+            { name: "Eggs", quantity: 8, expiry: "1 week" },
           ]}
         />
       </div>
     </div>
   );
 }
+
 
 // Settings Content Component
 function SettingsContent() {
@@ -213,9 +224,13 @@ function SettingsContent() {
     </div>
   );
 }
+type SettingsItemProps = {
+  title: string;        
+  description: string; 
+};
 
 // Settings Item Component
-function SettingsItem({ title, description }) {
+function SettingsItem({ title, description }: SettingsItemProps) {
   return (
     <Card>
       <CardContent className="p-4">
@@ -225,9 +240,14 @@ function SettingsItem({ title, description }) {
     </Card>
   );
 }
-
+type MealCardProps = {
+  day: string;      
+  meal: string;             
+  time: string;      
+  ingredients: string[];    
+};
 // Meal Card Component
-function MealCard({ day, meal, time, ingredients }) {
+function MealCard({ day, meal, time, ingredients }: MealCardProps) {
   return (
     <Card>
       <CardHeader>
@@ -245,9 +265,18 @@ function MealCard({ day, meal, time, ingredients }) {
     </Card>
   );
 }
+type Item = {
+  name: string;
+  quantity: number; 
+  expiry: string;  
+};
 
+type InventoryCategoryProps = {
+  category: string;
+  items: Item[];    
+};
 // Inventory Category Component
-function InventoryCategory({ category, items }) {
+function InventoryCategory({ category, items }: InventoryCategoryProps) {
   return (
     <div>
       <h3 className="font-semibold text-lg">{category}</h3>
