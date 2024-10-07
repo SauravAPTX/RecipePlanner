@@ -252,14 +252,14 @@ function MealCard({ day, meal, time, ingredients }: MealCardProps) {
     <Card>
       <CardHeader>
         <CardTitle className="flex justify-between items-center">
-          <span>{day}</span>
+          <span className="text-blue-600">{day}</span>
           <span className="flex items-center text-sm font-normal text-gray-600">
             {time}
           </span>
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <h3 className="font-semibold">{meal}</h3>
+        <h3 className="text-red-400 font-semibold">{meal}</h3>
         <p className="text-sm text-gray-600">Ingredients: {ingredients.join(", ")}</p>
       </CardContent>
     </Card>
