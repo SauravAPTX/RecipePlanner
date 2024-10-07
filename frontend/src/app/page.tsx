@@ -156,7 +156,7 @@ function QuickActionCard({ icon: Icon, title, description, onClick }) {
 function MealPlanContent() {
   return (
     <div>
-      <h2 className="text-xl font-semibold mb-4">This Week's Meal Plan</h2>
+      <h2 className="text-xl font-semibold mb-4">This Week&apos;s Meal Plan</h2>
       <div className="space-y-4">
         <MealCard
           day="Monday"
